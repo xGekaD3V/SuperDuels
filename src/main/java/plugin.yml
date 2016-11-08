@@ -1,0 +1,34 @@
+name: SuperDuelsReloaded
+main: com.geka.duels.Core
+version: 1.5.3
+author: Geka
+website: geka.io
+description: An ultimate solution to server owners wanting to create a duel system.
+softdepend: [Multiverse-Core, Essentials]
+
+commands:
+   duel:
+     description: Send, accept, or deny a duel request.
+     aliases: [1v1]
+   stats:
+     description: Display stats of yours or others.
+     aliases: [duelstats]
+   toggle:
+     description: Enable or disable receiving duel requests.
+     aliases: [tg]
+   sdr:
+     description: Administrative commands of Duels.
+     aliases: [ds, superduelsreloaded]
+
+permissions:
+  duels.*:
+    children:
+      duels.admin: true
+      duels.duel: true
+      duels.stats: true
+      duels.toggle: true
+  duels.default:
+    children:
+      duels.duel: true
+      duels.stats: true
+      duels.toggle: true

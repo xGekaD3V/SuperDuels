@@ -1,0 +1,35 @@
+name: Duels
+main: me.realized.duels.Core
+version: 1.3.4
+author: Realized
+description: An ultimate solution to server owners wanting to create a duel system.
+softdepend: [WorldGuard, Multiverse-Core, Essentials]
+
+# Multiverse-Core added as soft-depend due to locations being null when Duels is loaded first.
+
+commands:
+   duel:
+     description: Send, accept, or deny a duel request.
+     aliases: [1v1]
+   stats:
+     description: Display stats of yours or others.
+     aliases: [statistics, info, duelstats, dstats]
+   toggle:
+     description: Enable or disable receiving duel requests.
+     aliases: [tg]
+   duels:
+     description: Administrative commands of Duels.
+     aliases: [ds]
+
+permissions:
+  duels.*:
+    children:
+      duels.admin: true
+      duels.duel: true
+      duels.stats: true
+      duels.toggle: true
+  duels.default:
+    children:
+      duels.duel: true
+      duels.stats: true
+      duels.toggle: true
